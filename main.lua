@@ -11,8 +11,7 @@ function Convert.Vector2ToUDim2(vector2: Vector2): UDim2
 end
 
 function Convert.StringToBool(str: string): boolean
-	local string_booleans = { "true", "false" }
-	return table.remove(string_booleans, table.find(string_booleans, str)) or error("not boolean repr")
+	return str == "true"
 end
 
 function Convert.BoolToString(bool: boolean): string
@@ -40,7 +39,7 @@ function Convert.Vector3ToCFrame(vector3: Vector3): CFrame
 end
 
 function Convert.CFrameToVector3(cframe: CFrame): Vector3
-	return Vector3.new(cframe.X, cframe.Y, cframe.Z)
+	return cframe.Position
 end
 
 return Convert
